@@ -63,7 +63,7 @@ namespace Neo.SymVM.Types
 
         public override int SubItemsCount => dictionary.Count * 2;
 
-        public override StackItemType Type => StackItemType.Map;
+        public new StackItemType Type => StackItemType.Map;
 
         /// <summary>
         /// Gets an enumerable collection that contains the values in the map.

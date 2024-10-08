@@ -29,7 +29,7 @@ namespace Neo.SymVM.Types
 
         public override ReadOnlyMemory<byte> Memory => value ? TRUE : FALSE;
         public override int Size => sizeof(bool);
-        public override StackItemType Type => StackItemType.Boolean;
+        public new StackItemType Type => StackItemType.Boolean;
 
         /// <summary>
         /// Create a new VM object representing the boolean type.
@@ -47,7 +47,7 @@ namespace Neo.SymVM.Types
             return false;
         }
 
-        public override bool GetBoolean()
+        public new bool GetBoolean()
         {
             return value;
         }

@@ -43,7 +43,7 @@ namespace Neo.SymVM.Types
         public override int Count => _array.Count;
         public override IEnumerable<SymStackItem> SubItems => _array;
         public override int SubItemsCount => _array.Count;
-        public override StackItemType Type => StackItemType.Array;
+        public new StackItemType Type => StackItemType.Array;
 
         /// <summary>
         /// Create an array containing the specified items. And make the array use the specified <see cref="ReferenceCounter"/>.

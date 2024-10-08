@@ -47,7 +47,7 @@ namespace Neo.SymVM.Types
 
         internal abstract override SymStackItem DeepCopy(Dictionary<SymStackItem, SymStackItem> refMap, bool asImmutable);
 
-        public sealed override bool GetBoolean()
+        public new bool GetBoolean()
         {
             return true;
         }

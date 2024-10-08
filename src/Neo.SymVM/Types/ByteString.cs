@@ -34,7 +34,7 @@ namespace Neo.SymVM.Types
         private int _hashCode = 0;
 
         public override ReadOnlyMemory<byte> Memory { get; }
-        public override StackItemType Type => StackItemType.ByteString;
+        public new StackItemType Type => StackItemType.ByteString;
 
         /// <summary>
         /// Create a new <see cref="ByteString"/> with the specified data.
@@ -77,7 +77,7 @@ namespace Neo.SymVM.Types
             }
         }
 
-        public override bool GetBoolean()
+        public new bool GetBoolean()
         {
             if (Size > Integer.MaxSize) throw new InvalidCastException();
             return Unsafe.NotZero(GetSpan());

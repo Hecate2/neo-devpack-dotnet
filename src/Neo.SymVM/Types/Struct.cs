@@ -19,7 +19,7 @@ namespace Neo.SymVM.Types
     /// </summary>
     public class Struct : Array
     {
-        public override StackItemType Type => StackItemType.Struct;
+        public new StackItemType Type => StackItemType.Struct;
 
         /// <summary>
         /// Create a structure with the specified fields. And make the structure use the specified <see cref="ReferenceCounter"/>.

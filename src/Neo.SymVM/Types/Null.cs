@@ -19,7 +19,7 @@ namespace Neo.SymVM.Types
     /// </summary>
     public class Null : SymStackItem
     {
-        public override StackItemType Type => StackItemType.Any;
+        public new StackItemType Type => StackItemType.Any;
 
         internal Null() { }
 
@@ -36,7 +36,7 @@ namespace Neo.SymVM.Types
             return other is Null;
         }
 
-        public override bool GetBoolean()
+        public new bool GetBoolean()
         {
             return false;
         }

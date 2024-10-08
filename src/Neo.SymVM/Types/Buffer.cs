@@ -33,7 +33,7 @@ namespace Neo.SymVM.Types
         /// The size of the buffer.
         /// </summary>
         public int Size => InnerBuffer.Length;
-        public override StackItemType Type => StackItemType.Buffer;
+        public new StackItemType Type => StackItemType.Buffer;
 
         private readonly byte[] _buffer;
         private bool _keep_alive = false;
@@ -103,7 +103,7 @@ namespace Neo.SymVM.Types
             return result;
         }
 
-        public override bool GetBoolean()
+        public new bool GetBoolean()
         {
             return true;
         }

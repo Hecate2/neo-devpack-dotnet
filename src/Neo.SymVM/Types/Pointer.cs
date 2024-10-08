@@ -31,7 +31,7 @@ namespace Neo.SymVM.Types
         /// </summary>
         public int Position { get; }
 
-        public override StackItemType Type => StackItemType.Pointer;
+        public new StackItemType Type => StackItemType.Pointer;
 
         /// <summary>
         /// Create a code pointer with the specified script and position.
@@ -51,7 +51,7 @@ namespace Neo.SymVM.Types
             return false;
         }
 
-        public override bool GetBoolean()
+        public new bool GetBoolean()
         {
             return true;
         }

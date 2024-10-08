@@ -22,7 +22,7 @@ namespace Neo.SymVM.Types
     {
         private readonly object _object;
 
-        public override StackItemType Type => StackItemType.InteropInterface;
+        public new StackItemType Type => StackItemType.InteropInterface;
 
         /// <summary>
         /// Create an interoperability interface that wraps the specified <see cref="object"/>.
@@ -40,7 +40,7 @@ namespace Neo.SymVM.Types
             return false;
         }
 
-        public override bool GetBoolean()
+        public new bool GetBoolean()
         {
             return true;
         }

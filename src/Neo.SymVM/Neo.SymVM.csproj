@@ -4,7 +4,7 @@
     <TargetFrameworks>netstandard2.1;net8.0</TargetFrameworks>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
     <Nullable>enable</Nullable>
-    <PackageId>Neo.VM</PackageId>
+    <PackageId>Neo.SymVM</PackageId>
     <OutputPath>../../bin/$(PackageId)</OutputPath>
   </PropertyGroup>
 

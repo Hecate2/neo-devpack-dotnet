@@ -20,9 +20,9 @@ using System.Runtime.CompilerServices;
 namespace Neo.SymVM.Types
 {
     /// <summary>
-    /// The base class for all types in the VM.
+    /// Represents a symbolic object for all types in the VM.
     /// </summary>
-    public abstract class SymStackItem : IEquatable<SymStackItem>
+    public class SymStackItem : IEquatable<SymStackItem>
     {
         [ThreadStatic]
         private static Boolean? tls_true = null;
@@ -77,7 +77,7 @@ namespace Neo.SymVM.Types
         /// <summary>
         /// The type of this VM object.
         /// </summary>
-        public abstract StackItemType Type { get; }
+        public StackItemType Type { get; } = StackItemType.Any;
 
         /// <summary>
         /// Convert the VM object to the specified type.
@@ -140,7 +140,7 @@ namespace Neo.SymVM.Types
         /// Get the boolean value represented by the VM object.
         /// </summary>
         /// <returns>The boolean value represented by the VM object.</returns>
-        public abstract bool GetBoolean();
+        public bool GetBoolean() => throw new NotImplementedException();
 
         /// <summary>
         /// Get the integer value represented by the VM object.
@@ -257,5 +257,16 @@ namespace Neo.SymVM.Types
         {
             return (ByteString)value;
         }
+
+        public static SymStackItem operator +(SymStackItem a) => a;
+        public static SymStackItem operator -(SymStackItem a) => a;
+        public static SymStackItem operator ~(SymStackItem a) => a;
+        public static SymStackItem operator +(SymStackItem a, SymStackItem b) => a;
+        public static SymStackItem operator -(SymStackItem a, SymStackItem b) => a;
+        public static SymStackItem operator *(SymStackItem a, SymStackItem b) => a;
+        public static SymStackItem operator /(SymStackItem a, SymStackItem b) => a;
+        public static SymStackItem operator %(SymStackItem a, SymStackItem b) => a;
+        public static SymStackItem operator &(SymStackItem a, SymStackItem b) => a;
+        public static SymStackItem operator |(SymStackItem a, SymStackItem b) => a;
     }
 }

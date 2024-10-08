@@ -35,7 +35,7 @@ namespace Neo.SymVM.Types
 
         public override ReadOnlyMemory<byte> Memory => value.IsZero ? ReadOnlyMemory<byte>.Empty : value.ToByteArray();
         public override int Size { get; }
-        public override StackItemType Type => StackItemType.Integer;
+        public new StackItemType Type => StackItemType.Integer;
 
         /// <summary>
         /// Create an integer with the specified value.
@@ -62,7 +62,7 @@ namespace Neo.SymVM.Types
             return false;
         }
 
-        public override bool GetBoolean()
+        public new bool GetBoolean()
         {
             return !value.IsZero;
         }
