@@ -1,0 +1,22 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.1;net8.0</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Nullable>enable</Nullable>
+    <PackageId>Neo.VM</PackageId>
+    <OutputPath>../../bin/$(PackageId)</OutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <InternalsVisibleTo Include="Neo" />
+    <InternalsVisibleTo Include="Neo.SmartContract.Testing" />
+    <InternalsVisibleTo Include="Neo.VM.Benchmarks" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\neo\src\Neo.VM\Neo.VM.csproj" />
+    <ProjectReference Include="..\..\neo\src\Neo\Neo.csproj" />
+  </ItemGroup>
+
+</Project>
