@@ -108,6 +108,8 @@ namespace Neo.Optimizer
                         {
                             writeAddr = newStartInstructionAddress.ToString();
                             previousSequencePoint = newStartInstructionAddress;
+                            foreach (JToken? i in oldContentArray)
+                                ((JObject)i!)["optimization"] = Neo.Compiler.CompilationOptions.OptimizationType.Experimental.ToString().ToLowerInvariant();
                         }
                         else
                             // previousSequencePoint unchanged
